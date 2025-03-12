@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Nhóm hacker Lazarus của Triều Tiên lây nhiễm hàng trăm nạn nhân thông qua npm packages
+        </title><meta name="Description" content="Nhóm hacker Lazarus của Triều Tiên lây nhiễm hàng trăm nạn nhân thông qua npm packages
+        "><meta property="og:title" content="Nhóm hacker Lazarus của Triều Tiên lây nhiễm hàng trăm nạn nhân thông qua npm packages" />
+<meta property="og:description" content="Write-up for SekaiCTF 2023 The Bidding challenge" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lkmidas.github.io/posts/20230828-sekaictf2023-writeups/" /><meta property="og:image" content="https://lkmidas.github.io/images/avatar.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-28T09:11:56+07:00" />
+<meta property="article:modified_time" content="2023-08-28T09:11:56+07:00" /><meta property="og:site_name" content="My cool site" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://lkmidas.github.io/images/avatar.png"/>
+
+<meta name="twitter:title" content="Nhóm hacker Lazarus của Triều Tiên lây nhiễm hàng trăm nạn nhân thông qua npm packages"/>
+<meta name="twitter:description" content="Write-up for SekaiCTF 2023 The Bidding challenge"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://lkmidas.github.io/posts/20230828-sekaictf2023-writeups/" /><link rel="prev" href="https://lkmidas.github.io/posts/20230304-dicectf2023-writeups/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Nhóm hacker Lazarus của Triều Tiên lây nhiễm hàng trăm nạn nhân thông qua npm packages",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/lkmidas.github.io\/posts\/20230828-sekaictf2023-writeups\/"
+        },"genre": "posts","wordcount":  1973 ,
+        "url": "https:\/\/lkmidas.github.io\/posts\/20230828-sekaictf2023-writeups\/","datePublished": "2023-08-28T09:11:56+07:00","dateModified": "2023-08-28T09:11:56+07:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Midas"
+            },"description": "Write-up for SekaiCTF 2023 The Bidding challenge"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Midas Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/avatar.png"
+        data-srcset="/images/avatar.png, /images/avatar.png 1.5x, /images/avatar.png 2x"
+        data-sizes="auto"
+        alt="/images/avatar.png"
+        title="/images/avatar.png" /></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Midas Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/avatar.png"
+        data-srcset="/images/avatar.png, /images/avatar.png 1.5x, /images/avatar.png 2x"
+        data-sizes="auto"
+        alt="/images/avatar.png"
+        title="/images/avatar.png" /></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Đề mục</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Nhóm hacker Lazarus của Triều Tiên lây nhiễm hàng trăm nạn nhân thông qua npm packages
+        </h1><div class="post-meta">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-03-11">2025-03-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1973 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;10 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#sekaictf-2023---the-bidding">Đề mục</a>
+      <ul>
+        <li><a href="#given-files">Tổng quan</a></li>
+        <li><a href="#the-target-contract-functionalities">Chi tiết</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Nguồn tin<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><em>https://www.bleepingcomputer.com/news/security/north-korean-lazarus-hackers-infect-hundreds-via-npm-packages/</em></div>
+        </div>
+    </div>
+<h2 id="sekaictf-2023---the-bidding">Malwares - Npm Packages</h2>
+<h3 id="given-files">Given Files</h3>
+<p>6 packages độc hại đã được xác định trên npm (Node Package Manager) có liên quan đến nhóm tin tặc khét tiếng Lazarus của Triều Tiên.</p>
+
+<p>Các packages này đã được tải xuống 330 lần và được thiết kế để đánh cắp thông tin đăng nhập tài khoản, triển khai cửa hậu (backdoor) trên các hệ thống bị xâm nhập và thu thập thông tin nhạy cảm về tiền điện tử. </p>
+    
+<p>Chiến dịch này được phát hiện bởi Nhóm Nghiên cứu của Socket, họ đã liên kết nó với các hoạt động tấn công chuỗi cung ứng trước đây của Lazarus. Nhóm tin tặc này nổi tiếng với việc phát tán các packages độc hại vào các kho phần mềm như npm – nền tảng được hàng triệu lập trình viên JavaScript sử dụng – để xâm nhập vào hệ thống một cách thụ động.</p>
+    
+<p>Những chiến dịch tương tự do cùng nhóm tấn công này thực hiện cũng đã được phát hiện trên GitHub và Python Package Index (PyPI). Chiến thuật này thường giúp họ có quyền truy cập ban đầu vào các mạng giá trị cao, từ đó thực hiện các cuộc tấn công kỷ lục, chẳng hạn như vụ đánh cắp tiền điện tử trị giá 1,5 tỷ USD từ sàn giao dịch Bybit gần đây. </p> 
+    
+<p>Sáu gói Lazarus được phát hiện trên npm đều sử dụng kỹ thuật typosquatting để đánh lừa các lập trình viên cài đặt nhầm: </p>
+<ul>
+<li><code>is-buffer-validator</code>: Package độc hại giả mạo thư viện phổ biến is-buffer để đánh cắp thông tin đăng nhập.</li>
+<li><code>yoojae-validator</code>: Thư viện xác thực giả mạo được sử dụng để thu thập dữ liệu nhạy cảm từ các hệ thống bị nhiễm.</li>
+<li><code>event-handle-package</code>: Ngụy trang dưới dạng công cụ xử lý sự kiện nhưng thực chất triển khai cửa hậu (backdoor) để truy cập từ xa.</li>
+<li><code>array-empty-validator</code>: Gói giả mạo được thiết kế để thu thập thông tin đăng nhập hệ thống và trình duyệt.</li>
+<li><code>react-event-dependency</code>: Giả danh một tiện ích của React nhưng thực thi mã độc để xâm nhập vào môi trường của lập trình viên.</li>
+<li><code>auth-validator</code>: Giả mạo công cụ xác thực danh tính nhằm đánh cắp thông tin đăng nhập và API key.</li>
+
+</ul>
+<h3 id="the-target-contract-functionalities">Chi tiết</h3>
+<p>Các gói này chứa mã độc được thiết kế để đánh cắp thông tin nhạy cảm, chẳng hạn như ví tiền điện tử và dữ liệu trình duyệt bao gồm mật khẩu đã lưu, cookie và lịch sử duyệt web.</p>
+<p>Chúng cũng tải xuống mã độc BeaverTail và cửa hậu InvisibleFerret, từng được tin tặc Triều Tiên sử dụng trong các chiến dịch lừa đảo tuyển dụng giả mạo nhằm cài đặt phần mềm độc hại trên thiết bị nạn nhân. </p>
+
+<figure>
+
+<img src="\images\script-downloads-additional-malware.webp" alt="Description of image" width="1000">
+<figcaption>Đoạn mã tải về payload phần mềm độc hại<br>Nguồn: Socket</figcaption>
+
+</figure>
+
+<p>"Đoạn mã này được thiết kế để thu thập thông tin môi trường hệ thống, bao gồm tên máy (hostname), hệ điều hành và các thư mục hệ thống," báo cáo của Socket giải thích.</p>
+
+<p>"Nó duyệt qua từng hồ sơ trình duyệt một cách có hệ thống để tìm kiếm và trích xuất các tệp nhạy cảm như Login Data từ Chrome, Brave và Firefox, cũng như các kho lưu trữ keychain trên macOS."</p>
+
+<p>"Đáng chú ý, mã độc này cũng nhắm mục tiêu vào ví tiền điện tử, đặc biệt là trích xuất tệp id.json từ Solana và exodus.wallet từ Exodus."</p>
+
+<p>Cả sáu gói Lazarus vẫn còn tồn tại trên npm và các kho lưu trữ GitHub, vì vậy mối đe dọa vẫn còn đang hoạt động.</p>
+
+<p>Các nhà phát triển phần mềm được khuyến cáo kiểm tra kỹ lưỡng các gói họ sử dụng trong dự án và thường xuyên xem xét mã nguồn mở để phát hiện các dấu hiệu đáng ngờ, chẳng hạn như mã bị làm rối (obfuscated code) và các lệnh gọi đến máy chủ bên ngoài.</p>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Được cập nhật vào 2025-03-12</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://lkmidas.github.io/posts/20230828-sekaictf2023-writeups/" data-title="Nhóm hacker Lazarus của Triều Tiên lây nhiễm hàng trăm nạn nhân thông qua npm packages" data-via="_lkmidas"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://lkmidas.github.io/posts/20230828-sekaictf2023-writeups/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://lkmidas.github.io/posts/20230828-sekaictf2023-writeups/" data-title="Nhóm hacker Lazarus của Triều Tiên lây nhiễm hàng trăm nạn nhân thông qua npm packages"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://lkmidas.github.io/posts/20230828-sekaictf2023-writeups/" data-title="Nhóm hacker Lazarus của Triều Tiên lây nhiễm hàng trăm nạn nhân thông qua npm packages"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://lkmidas.github.io/posts/20230828-sekaictf2023-writeups/" data-title="Nhóm hacker Lazarus của Triều Tiên lây nhiễm hàng trăm nạn nhân thông qua npm packages"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":60},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-HGQHGNF9HJ');
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-HGQHGNF9HJ" async></script></body>
+</html>

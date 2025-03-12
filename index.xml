@@ -1,0 +1,89 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Midas Blog</title>
+        <link>https://lkmidas.github.io/</link>
+        <description>This is my cool site</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 28 Aug 2023 09:11:56 &#43;0700</lastBuildDate>
+            <atom:link href="https://lkmidas.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>SekaiCTF 2023 Solana Challenge The Bidding Write-up</title>
+    <link>https://lkmidas.github.io/posts/20230828-sekaictf2023-writeups/</link>
+    <pubDate>Mon, 28 Aug 2023 09:11:56 &#43;0700</pubDate>
+    <author>Midas</author>
+    <guid>https://lkmidas.github.io/posts/20230828-sekaictf2023-writeups/</guid>
+    <description><![CDATA[Write-up for SekaiCTF 2023 The Bidding challenge]]></description>
+</item>
+<item>
+    <title>DiceCTF 2023 Solana Challenges Write-up</title>
+    <link>https://lkmidas.github.io/posts/20230304-dicectf2023-writeups/</link>
+    <pubDate>Sat, 04 Mar 2023 15:44:42 -0600</pubDate>
+    <author>Midas</author>
+    <guid>https://lkmidas.github.io/posts/20230304-dicectf2023-writeups/</guid>
+    <description><![CDATA[Write-up for DiceCTF 2023 Solana challenges]]></description>
+</item>
+<item>
+    <title>idekCTF 2022 Solana Challenges Write-up</title>
+    <link>https://lkmidas.github.io/posts/20230303-idekctf2022-writeups/</link>
+    <pubDate>Fri, 03 Mar 2023 11:32:39 -0600</pubDate>
+    <author>Midas</author>
+    <guid>https://lkmidas.github.io/posts/20230303-idekctf2022-writeups/</guid>
+    <description><![CDATA[Write-up for idekCTF 2022 Solana challenges]]></description>
+</item>
+<item>
+    <title>N1CTF 2022 Solana Challenges Write-up</title>
+    <link>https://lkmidas.github.io/posts/20221128-n1ctf2022-writeups/</link>
+    <pubDate>Mon, 28 Nov 2022 08:43:57 -0600</pubDate>
+    <author>Midas</author>
+    <guid>https://lkmidas.github.io/posts/20221128-n1ctf2022-writeups/</guid>
+    <description><![CDATA[Write-up for N1CTF 2022 Solana challenges]]></description>
+</item>
+<item>
+    <title>GoogleCTF2022 - eldar writeups</title>
+    <link>https://lkmidas.github.io/posts/20220704-ggctf2022-writeups/</link>
+    <pubDate>Sun, 03 Jul 2022 22:28:02 &#43;0700</pubDate>
+    <author>Midas</author>
+    <guid>https://lkmidas.github.io/posts/20220704-ggctf2022-writeups/</guid>
+    <description><![CDATA[Writeup for GoogleCTF2022 eldar challenge]]></description>
+</item>
+<item>
+    <title>GoogleCTF2021 - weather writeups</title>
+    <link>https://lkmidas.github.io/posts/20210719-ggctf2021-writeups/</link>
+    <pubDate>Mon, 19 Jul 2021 19:40:02 &#43;0700</pubDate>
+    <author>Midas</author>
+    <guid>https://lkmidas.github.io/posts/20210719-ggctf2021-writeups/</guid>
+    <description><![CDATA[Writeup for GoogleCTF2021 weather challenge]]></description>
+</item>
+<item>
+    <title>OMHCTF2021 - Flag saver, GRUB writeups</title>
+    <link>https://lkmidas.github.io/posts/20210517-omhctf2021-writeups/</link>
+    <pubDate>Mon, 17 May 2021 10:28:35 &#43;0700</pubDate>
+    <author>Midas</author>
+    <guid>https://lkmidas.github.io/posts/20210517-omhctf2021-writeups/</guid>
+    <description><![CDATA[Writeup for OMHCTF2021 Flag saver, GRUB challenge]]></description>
+</item>
+<item>
+    <title>AeroCTF2021 - Dummyper writeups</title>
+    <link>https://lkmidas.github.io/posts/20210228-aeroctf2021-writeups/</link>
+    <pubDate>Sun, 28 Feb 2021 15:33:12 &#43;0700</pubDate>
+    <author>Midas</author>
+    <guid>https://lkmidas.github.io/posts/20210228-aeroctf2021-writeups/</guid>
+    <description><![CDATA[Writeup for AeroCTF2021 Dummyper challenge]]></description>
+</item>
+<item>
+    <title>Linux Kernel Exploitation Technique: Overwriting modprobe_path</title>
+    <link>https://lkmidas.github.io/posts/20210223-linux-kernel-pwn-modprobe/</link>
+    <pubDate>Tue, 23 Feb 2021 20:20:10 &#43;0700</pubDate>
+    <author>Midas</author>
+    <guid>https://lkmidas.github.io/posts/20210223-linux-kernel-pwn-modprobe/</guid>
+    <description><![CDATA[A popular and powerful technique to exploit the Linux kernel through modprobe_path]]></description>
+</item>
+<item>
+    <title>Learning Linux Kernel Exploitation - Part 3</title>
+    <link>https://lkmidas.github.io/posts/20210205-linux-kernel-pwn-part-3/</link>
+    <pubDate>Fri, 05 Feb 2021 10:11:42 &#43;0700</pubDate>
+    <author>Midas</author>
+    <guid>https://lkmidas.github.io/posts/20210205-linux-kernel-pwn-part-3/</guid>
+    <description><![CDATA[The final part of the series about learning Linux kernel exploitation through hxpCTF2020 kernel-rop: Full protection]]></description>
+</item>
+</channel>
+</rss>
